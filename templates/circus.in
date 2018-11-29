@@ -1,0 +1,11 @@
+[circus]
+check_delay = 5
+
+[watcher:app]
+cmd = ${buildout:bin-directory}/py
+args = -m flask run --port=${app:port}
+warmup_delay = 1
+numprocesses = 1
+
+[env:app]
+FLASK_APP = ${buildout:directory}/app.py

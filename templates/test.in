@@ -1,0 +1,22 @@
+*** Settings ***
+Library           Selenium2Library
+Library           OperatingSystem
+Suite Setup       Setup chromedriver
+
+*** Keywords ****
+Setup chromedriver
+  Set Environment Variable  webdriver.chrome.driver  ${webdriver-chrome:driver_location}
+
+
+*** Test Cases ***
+Test availability
+    Open Browser   http://127.0.0.1:${app:port}  chrome
+    Page should contain  Hello
+    sleep  3
+    Go to  http://127.0.0.1:${app:port}/make-me-happy
+    sleep  2
+    Click button  happy  
+    sleep  3
+    Handle Alert
+    sleep  2
+    [Teardown]   Close browser

@@ -1,0 +1,11 @@
+from flask import Flask, render_template
+from templates import template_dir
+app = Flask(__name__, template_folder=template_dir)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, ${app:name}!'
+
+@app.route('/make-me-happy')
+def happy():
+    return render_template("happy.html", name="${app:name}")
