@@ -14,7 +14,4 @@ pyenv virtualenv 3.7.1 bdemo
 
 git clone https://github.com/vmaksymiv/bdemo.git
 cd bdemo
-pyenv local bdemo
-
-pip install zc.buildout
-buildout -c development.cfg
+pyenv local bdemo && pip install zc.buildout && buildout -c development.cfg
