@@ -9,8 +9,8 @@ if ! command -v pyenv 1>/dev/null; then
 fi
 
 pyenv update
-pyenv install 3.7.1
-pyenv virtualenv 3.7.1 bdemo
+pyenv install 3.6.5
+pyenv virtualenv 3.6.5 bdemo
 
 git clone https://github.com/vmaksymiv/bdemo.git
 cd bdemo
