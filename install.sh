@@ -10,8 +10,7 @@ fi
 
 pyenv update
 pyenv install 3.6.5
-pyenv virtualenv 3.6.5 bdemo
+pyenv virtualenv 3.6.5 bdemo_py
 
 git clone https://github.com/vmaksymiv/bdemo.git
-cd bdemo
-pyenv local bdemo && pip install zc.buildout && buildout -c development.cfg
+cd bdemo && pyenv local bdemo_py && pip install zc.buildout && buildout -c development.cfg
